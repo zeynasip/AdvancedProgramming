@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Add Course</title>
+</head>
+
+<script>
+"use strict";
+var list = [];
+var listavg = [];
+/*function reportList(str) {
+    for()
+    outA.innerText = "list = [ "+ list.join(", ")+" ] "+list.length;
+    console.log(str);
+}*/
+function push(){
+    let n = ne.value;
+    let m = Number(me.value);
+    let f = Number(fe.value);
+    list.push(n);    
+    list.push(m);   
+    list.push(f);
+    console.log(list);
+}
+function printList(str){
+    /*let i;
+    for(i = 0; i < list.length; i++){
+        outp.innerText = "list = [ "+ list.join(", ")+" ] "+list.length;
+        i = i+3;
+    }*/
+    let s = [], 
+    n = 0;
+    while (n < list.length){
+        s.push(list[n]);
+        n++;
+    }
+    console.log(s.toString());
+    outp.innerText = s.join(" ");
+console.log(str);
+}
+function average(){
+    let mavg = me.value * (0.5);
+    let favg = fe.value * (0.5);
+    let avg = mavg + favg;
+    listavg.push(ne.value);
+    listavg.push(avg);
+    outa.innerText = listavg;
+}
+function max(){
+    let mavg = 0;
+    let i;
+    for(i = 0; i < listavg.length; i++){
+        if(list[i] > mavg){
+            mavg = list[i];
+        }
+    }
+    outm.innerText = mavg;
+}
+</script>
+
+<body>
+
+<h2 id=title></h2>
+
+<p>
+name = <input type=text id=ne style="width:99px">
+midterm = <input type=text id=me style="width:99px">
+final = <input type=text id=fe style="width:99px">
+</p>
+
+<p>
+<input type=button value="Add"  onClick="push()">
+<input type=button value="Print"  onClick="printList()">
+<input type=button value="Avg"  onClick="average()">
+<input type=button value="Max"   onClick="max()">
+</p>
+
+<hr />
+<b>Output Of Print</b>
+<pre id=outp></pre>
+<hr />
+<b>Output Of Avg</b>
+<pre id=outa></pre>
+<hr />
+<b>Output Of Max</b>
+<pre id=outm></pre>
+<hr />
+
+<script>
+    title.innerText = document.title;
+</script>
+
+</body>
+</html>
