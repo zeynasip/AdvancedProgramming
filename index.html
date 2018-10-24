@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://maeyler.github.io/JS/sss/inspector.css" 
+          rel="stylesheet" media="all">
+    <script src="https://maeyler.github.io/JS/sss/inspector.js"></script>
+    <script src="database.js"></script>
+    <title>Advanced Programming - Zeynep Nasip</title>
+</head>
+
+<p><b id="docName">Inspector V2.9a</b> &nbsp;
+<a href="https://maeyler.github.io/JS/sss/">Read me</a> &nbsp;
+<a href="https://maeyler.github.io/JS/sss/Turkish">Turkish</a>
+</p>
+
+<script> 
+class CW4 extends Menu{
+    constructor(){
+        super();
+        this.Course = new Course("BLM305", "15:00", "24.10.2018", ["B121"]);
+        this.Student = new Student("1621221085", "Zeynep NAsip", "1,98", ["BLM305"]);
+        this.Point = new Point(10, 20);
+        this.Point3D = new Point3D(10, 20, 30);
+        this.Distance = new Distance(100);
+    }
+}
+</script>
+
+<script>
+function init() {
+    display(MENU); 
+    display(new CW4());
+    display(MENU);
+}
+    docName.innerText = "Inspector "+VERSION;
+    try {
+        inspect(document.body, init); //makes the table
+        //inp.value = "new Number(c.pi)";
+    } catch(e) {
+        reportError(e);
+    }
+</script>
+
+</p><p>
+<a href="https://zeynasip.github.io/AdvancedProgramming/array_ornek.html">Array Örnek</a>
+<a href="https://zeynasip.github.io/AdvancedProgramming/char_sayac.html">Char Sayac</a>
+<a href="https://zeynasip.github.io/AdvancedProgramming/homework1.html">Homework1</a>
+<a href="https://zeynasip.github.io/AdvancedProgramming/inspector.html">Inspector</a>
+<a href="https://zeynasip.github.io/AdvancedProgramming/c4_data.html">c4 Data</a>
+</p>
+<pre id=disp1></pre>
+<img id=disp2 />
+
+</body>
+</html>
