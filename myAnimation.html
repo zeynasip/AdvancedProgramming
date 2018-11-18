@@ -1,0 +1,139 @@
+<html lang="en-US">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Zn Demo</title>
+
+<style>
+.zeynep1 {
+    animation: zeynep1 10s ease-out infinite;
+}
+.nasip1 {
+    animation: nasip1 10s ease-out infinite;
+}
+.byline span {
+  animation: spin-letters 10s linear infinite;
+}
+.byline {
+  animation: move-byline 10s linear infinite;
+}
+@keyframes zeynep1 {
+  0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-0.75em);
+  }
+  20% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+  }
+}
+@keyframes nasip1 {
+  0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(0.5em);
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+  }
+}
+@keyframes spin-letters {
+  0%, 10% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  30% {
+    opacity: 1;
+  }
+  70%, 86% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+  95%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes move-byline {
+  0% {
+    transform: translateZ(5em);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+.zn-demo {
+  perspective: 800px;
+  transform-style: preserve3d;
+}
+body {
+  background: #000 url(/home/zn/Masaüstü/AdvancedProgramming/HW3/yıldız1.gif);
+}
+.zn-demo {
+  height: 17em;
+  left: 50%;
+  position: absolute;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  width: 34em;
+}
+.byline span {
+  display: inline-block;
+}
+img {
+  width: 100%;
+}
+.zeynep1, .nasip1, .byline {
+  position: absolute;
+}
+.zeynep1 {
+  top: -0.75em;
+}
+.nasip1 {
+  bottom: -0.5em;
+}
+.byline {
+  color: #fff;
+  font-family: "ITC Serif Gothic", Lato;
+  font-size: 2.25em;
+  left: -2em;
+  letter-spacing: 0.4em;
+  right: -2em;
+  text-align: center;
+  text-transform: uppercase;
+  top: 29%;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class = "zn-demo">
+    <img src = "zeynep2.png" id = "zeynep_img" class = "zeynep1">
+    <img src = "nasip2.png" id = "nasip_img" class = "nasip1">
+    <h2 class = "byline" id = "byline">guc seninle olsun</h2>
+</div>
+
+</body>
+</html>
+
+
+
+
