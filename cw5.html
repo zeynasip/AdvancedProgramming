@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>File Comparison</title>
+</head>
+
+<script>
+const url = "https://maeyler.github.io/BLM305/README.md";
+let text;
+function readRemoteFile() {
+    fetch(url)
+        .then(r => r.text())
+        .then(remoteToTxt);
+}
+function remoteToTxt(txt) {
+    text = txt;
+}
+function fileSelect(t) {
+    let findd = false;
+    for(let i = 0; i < t.files.length; i++){
+        let reader = new FileReader();
+        let f = t.files[i];
+        let fs = f.size;
+        reader.onload = function(evt) {
+            let local = evt.target.result;
+            if(fs != text.size)
+                out.innerText = out.innerText + "\n" + (i+1) + " . file is different."
+            if(local.replace(/\s/g,'') == text.replace(/\s/g,'')) {
+                findd = true;
+                out.innerText = (i+1) + " items checked, "+ f.name + " has the same content";
+            }
+        } 
+        reader.readAsText(f);
+    }
+    if(findd == false){
+	    out.innerText = t.files.length + " items checked, all files different ";
+    }
+}
+</script>
+
+<body>
+
+<h2 id=title></h2>
+
+<input type = file id = button onChange = 'fileSelect(this)' multiple >
+
+<hr />
+<p>
+<output id="out"></output>
+</p>
+
+
+
+<script>
+    title.innerText = document.title;
+    readRemoteFile();
+</script>
+
+</body>
+</html>
+
