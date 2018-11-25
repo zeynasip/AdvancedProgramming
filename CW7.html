@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Table Of Students</title>
+
+<script>
+const array = [
+    ["Zeynep", "NASİP",  2.98],
+    ["Busenur", "KARACA", 2.33],
+    ["Ümmügülsüm", "CAN", 3.15],
+    ["Ömer Faruk", "KAAN", 2.61],
+    ["Muhammed Zahid", "ÜNAL", 2.25],
+    ["Enes", "KARALİ", 4.00],
+    ["Ayşe Sena", "FEYİZ", 2.81]
+  ];
+
+function createTable(array) {
+    //table = document.getElementById("table");
+    document.write("<table border = 1 bgcolor = '#FFDEAD' bordercolor = '#FF4500'>");  
+    for(let i = 0; i < array.length; i++){
+        document.write("<tr>");
+        //newRow = table.insertRow(table.length);
+        for(let j = 0; j < array[i].length; j++){
+            document.write("<td>" + array[i][j] + "</td>");
+            //newCell = newRow.insertCell(j);
+            //newCell.innerHTML = array[i][j];
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Computer Engineering Students</h2>
+
+<p>My Repository: <a href="https://github.com/zeynasip/AdvancedProgramming">Click Here!</a></p>
+
+<p>My Homework 3: <a href="https://zeynasip.github.io/AdvancedProgramming/myAnimation.html">Click Here!</a></p>
+
+<script>
+    createTable(array);
+</script>
+
+</body>
+
+</html>
+
+
