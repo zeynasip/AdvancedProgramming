@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src = "Database.js"></script>
+    <title>Student Database</title>
+</head>
+
+<body>
+
+<h2 id = title></h2>
+
+<p>
+GPA = <input type = number id = ort style = "width:90px">
+Student ID = <input type = number id = std_id style = "width:90px">
+Course Name = <input type = text id = crs_name style = "width:90px">
+Room = <input type = text id = room style = "width:90px">
+</p>
+
+<button onClick = 'randomStudent()'>Random Student</button>(Returns the random student.)<p>
+<button onClick = 'findAboveGpa()'>Find Above GPA </button>(Returns students by above the value entered in the GPA text box.)<p>
+<button onClick = 'studentsCourses()'>Student's Courses</button>(Returns student's courses by the id entered in the Student's ID text box.)<p>
+<button onClick = 'findExams()'>Exam Schedule</button>(Returns student's exam schedule by the id entered in the Student's ID text box.)<p>
+<button onClick = 'listStudents()'>List Of Students</button>(Returns student list by the course name entered in the Course Name text box.)<p>
+<button onClick = 'findCourses()'>Courses In Exam Room</button>(Returns course list by the exam room entered in the Room text box.)<p>
+<button onClick = 'totalNoCourses()'>Total Number Of Courses</button>(Returns total number of courses by the room entered in the Room text box.)<p>
+<button onClick = 'out.innerText=""'>Clear</button>
+
+<hr />
+<p id = out></p>
+
+<script>
+    title.innerText = document.title;
+    readStudent();
+    readCourse();
+</script>
+
+</body>
+</html>
