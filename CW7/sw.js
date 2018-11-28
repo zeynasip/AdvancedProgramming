@@ -1,4 +1,4 @@
-const CACHE ='AdvancedProgramming'
+const CACHE ='https://zeynasip.github.io/AdvancedProgramming/index.html'
 function installCB(e) {
   console.log('install', e.request);
 }
