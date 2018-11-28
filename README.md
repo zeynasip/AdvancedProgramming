@@ -1,7 +1,7 @@
 # AdvancedProgramming
 
 >> BLM305
-- [CW2: Array Example](https://zeynasip.github.io/AdvancedProgramming/CW2/array_ornek.html)
+- [CW2: Array Example](hhttps://zeynasip.github.io/AdvancedProgramming/CW2/array_ornek.html)
 - [HW1: Add Course](https://zeynasip.github.io/AdvancedProgramming/HW1/homework1.html)
 - [CW3: Data Analysis](https://zeynasip.github.io/AdvancedProgramming/CW3/c4_data.html)
 - [CW4: Inspector](https://zeynasip.github.io/AdvancedProgramming/CW4/index.html)
