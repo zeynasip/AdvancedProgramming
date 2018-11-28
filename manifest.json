@@ -1,11 +1,11 @@
 {
   "name": "ZN World",
-  "start_url": "/AdvancedProgramming/index.html",
+  "start_url": "https://zeynasip.github.io/AdvancedProgramming/index.html",
   "display": "standalone",
   "background_color": "orange",
   "icons": [
     {
-      "src": "jpt.png",
+      "src": "images/jpt.png",
       "sizes": "192x192",
       "type": "image/png"
     }
