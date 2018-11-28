@@ -1,0 +1,13 @@
+{
+  "name": "ZN World",
+  "start_url": "/AdvancedProgramming/index.html",
+  "display": "standalone",
+  "background_color": "orange",
+  "icons": [
+    {
+      "src": "jpt.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

@@ -5,6 +5,12 @@
     <title>File Comparison</title>
 </head>
 
+<style>
+.button:hover {
+    color : red;
+}
+</style>
+
 <script>
 const url = "https://maeyler.github.io/BLM305/README.md";
 let text;
@@ -43,7 +49,7 @@ function fileSelect(t) {
 
 <h2 id=title></h2>
 
-<input type = file id = button onChange = 'fileSelect(this)' multiple >
+<input type = file id = button onChange = 'fileSelect(this)' multiple class = button>
 
 <hr />
 <p>
