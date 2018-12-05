@@ -1,0 +1,102 @@
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Using SVG</title>
+
+  <style>
+    svg{
+        background: gray;
+        font: 10px arial, sans-serif;
+    }
+  </style>
+
+</head>
+
+<script>
+function daireRenk(){
+    let circle = document.getElementById("circle");
+    let renk = document.getElementById("daire_renk");
+    //console.log(renk.value);
+    if(renk.value == "mavi"){
+        circle.style = "fill:blue";
+    }
+    if(renk.value == "kirmizi"){
+        circle.style = "fill:red";
+    }
+    if(renk.value == "pembe"){
+        circle.style = "fill:pink";
+    }
+    if(renk.value == "yesil"){
+        circle.style = "fill:green";
+    }
+}
+
+function kareRenk(){ 
+    let rect = document.getElementById("rect");
+    let renk = "fill:" + renk_sec.value;
+    rect.style = renk;
+}
+
+function daireHareket(){
+    let circle = document.getElementById("circle");
+    let value = slider1.value;
+    let coord = "c" + 'y';
+    circle.setAttributeNS(null, coord, value*5);
+}
+
+function kareHareket(){
+    let rect = document.getElementById("rect");
+    let value = slider2.value;
+    let coord = "c" + 'x';
+    rect.setAttributeNS(null, coord, value*5);
+}
+
+</script>
+
+<body>
+
+<h2>Using SVG</h2>
+
+<svg id='svg' width='340' height='100'>
+  <circle id = circle cx='50' cy='50' r='40'
+  style='fill:yellow;'/>
+  <text id = dtxt x='35' y='55' fill='black'>Circle</text>
+  <rect id = rect x='110' y='10' width='100' height='80'
+  style='fill:pink;'/>
+  <text id = ktxt x='145' y='55' fill='blue'>Rect</text>
+</svg>
+
+<br>
+<br>
+
+<input id = renk_sec type = "color">
+<input type = button value = "Kare Renk Değiş" onClick = 'kareRenk()'>
+
+<br>
+<br>
+
+<label>Bir renk seçiniz:
+    <select id = "daire_renk" name = "daire_renk">
+        <option value = "mavi">Mavi</option>
+        <option value = "kirmizi">Kırmızı</option>
+        <option value = "pembe">Pembe</option>
+        <option value = "yesil">Yeşil</option>
+    </select>
+</label>
+<input type = button value = "Daire Renk Değiş" onClick = 'daireRenk()'>
+
+<br>
+<br>
+
+Daire Konumu : <input id = slider1 type = "range" min="1" max="20" value = "20" onClick = "daireHareket()"/>
+
+<br>
+<br>
+
+Kare Konumu : <input id = slider2 type = "range" min="1" max="20" value = "20" onClick = "kareHareket()"/>
+
+</body>
+</html>
+
