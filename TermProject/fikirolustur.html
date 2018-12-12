@@ -1,0 +1,129 @@
+<html lang = "en-US">
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+
+<head>
+
+<meta charset = "UTF-8">
+<meta name = "viewport" content = "width=device-width">
+<title>Fikir Olustur</title>
+
+<style>
+body{
+    border: 5px solid black;
+    padding: 30px;
+    background-color: #d7f3f3;
+    background-repeat: no-repeat;
+    background-size: 1500px 700px;
+}
+.baslik{
+    color: #000000;
+    font-family: "ITC Serif Gothicv", Lato;
+    font-size: 2em;
+    left: -2em;
+    letter-spacing: 0.2em;
+    right: -2em;
+    text-align: center;
+    top: 29%;
+}
+.sinif{
+    color: #000000;
+    font-family: "ITC Serif Gothic", Lato;
+    font-size: 1em;
+    left: -2em;
+    right: -2em;
+    text-align: center;
+    top: 10%;
+}
+.satir{
+    padding-left: 5em
+    margin-left: 20em
+}
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+</style>
+
+</head>
+
+<script>
+let fikirler = new Array();
+fikirler.push({ad: "zeynep", soyad: "nasip", yas: 21, posta: "zeynasip@gmail.com", numara: 5398207862, fikir: "Girişimcilik Dükkanı", butce: 100});
+function gonder(){
+    let ad, soyad, yas, durum, posta, numara, fikir, butce;
+    let birfikir = new Object();
+    birfikir.ad = ad_txt.value;
+    birfikir.soyad = soyad_txt.value;
+    birfikir.yas = yas_txt.value;
+    birfikir.posta = posta_txt.value;
+    birfikir.numara = numara_txt.value;
+    birfikir.fikir = fikir_txt.value;
+    birfikir.butce = butce_txt.value;
+    fikirler.push(birfikir);
+    alert("Fikriniz Kaydedildi!");
+}
+function sifirla(){
+    ad_txt.value = "";
+    soyad_txt.value = "";
+    yas_txt.value = "";
+    posta_txt.value = "";
+    numara_txt.value = "";
+    fikir_txt.value = "";
+    butce_txt.value = "";
+}
+</script>
+
+<body>
+
+<center>
+<h class = "baslik">FİKRİNİ DENE</h>
+<pre></pre>
+<a href = "anasayfa.html" class =" sinif"><span style = "opacity: 0.5;">Anasayfa</a> &nbsp; &nbsp; &nbsp;
+<a href = "fikirler.html" class = "sinif"><span style = "opacity: 0.5;">Fikir Rafları</a> &nbsp; &nbsp; &nbsp;
+<a href = "sponsorluk.html" class = "sinif"><span style = "opacity: 0.5;">Sponsor Ol..</a> &nbsp; &nbsp; &nbsp;
+<br>
+</center>
+
+<fieldset>
+<legend>Kişisel Bilgiler</legend><br/>
+Adınız:&nbsp;<input type = text id = ad_txt style = "width:99px" class = "satir" tabindex = "1"><br><br>
+Soyadınız:&nbsp;<input type = text id = soyad_txt style = "width:99px" class = "satir" tabindex = "2"><br><br>
+Yaşınız:&nbsp;<input type = number id = yas_txt style = "width:99px" class = "satir" tabindex = "3"><br><br>
+Çalışma Durumunuz:&nbsp;<select name="meslek" tabindex = "4">
+<option value = "win">Öğrenci</option>
+<option value = "winnt">Çalışıyor</option>
+<option value = "linux">Çalışmıyor</option>
+</select>
+</fieldset><br>
+<fieldset>
+<legend>İletişim Bilgileri</legend><br/>
+E-postanız:&nbsp;<input type = text id = posta_txt style = "width:99px" class = "satir" tabindex = "5"><br><br>
+Numaranız:&nbsp;<input type = number id = numara_txt style = "width:99px" class = "satir" tabindex = "6"><br>
+</fieldset><br>
+<fieldset>
+Fikriniz:<br>
+<textarea type = text id = fikir_txt class = "satir" tabindex = "7"></textarea><br><br>
+Ortalama Bütçe:&nbsp;<input type = number id = butce_txt style = "width:99px" class = "satir" tabindex = "8"><br>
+</fieldset><br>
+
+<button id = gonder onclick = "gonder()">Gönder</button>
+<button id = sifirla onclick = "sifirla()">Sıfırla</button>
+
+</body>
+</html>
