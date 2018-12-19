@@ -1,0 +1,110 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAUW-_mPRKyfeNsNqpq7NytfYAtg0CU1mw",
+  authDomain: "dukkan-database.firebaseapp.com",
+  databaseURL: "https://dukkan-database.firebaseio.com",
+  projectId: "dukkan-database",
+  storageBucket: "dukkan-database.appspot.com",
+  messagingSenderId: "480765420024"
+};
+firebase.initializeApp(config);
+
+const dbRef = firebase.database().ref();
+const ideasRef = dbRef.child('ideas');
+
+function ideaClicked(e){
+	var ideaID = e.target.getAttribute("idea-key");
+	const ideasRef = dbRef.child('ideas/' + ideaID);
+	const ideaDetay = document.getELementedById("idea-detay");
+	ideasRef.on("value", snap => {
+		ideaDetay.innerHTML = "";
+		snap.forEach(childSnap => {
+			var $p = document.createElement("p");
+			$p.innerHTML = childSnap.key + " - " + childSnap.val();
+			ideaDetay.append($p);
+		})
+	});
+}
+
+const addIdeaButton = document.getElementById("addtodatabase");
+if(addIdeaButton)
+	addIdeaButton.addEventListener("click", addButtonTikla, false);
+
+function addButtonTikla(){
+	const ideasRef = dbRef.child('ideas');
+	const addIdeaInputs	= document.getElementsByClassName("satir");
+	let newIdea = {};
+	for(let i = 0; i < addIdeaInputs.length; i ++){
+		let key = addIdeaInputs[i].getAttribute('data-key');
+		let value = addIdeaInputs[i].value;
+		newIdea[key] = value;
+	}
+	ideasRef.push(newIdea);
+	alert("Bilgileriniz sisteme eklenmiştir!");
+}
+
+function readIdea(){
+	const fikirler = document.getElementById("fikirler");
+	const fikirListe = document.getElementById("idea-list"); 
+	ideasRef.on("child_added", snap => {
+		let idea = snap.val();
+		console.log(idea.fikir);
+		fikirler.innerHTML += idea.ad + " " + idea.soyad + " -> " + idea.yas  + " -> " + idea.fikir + " -> " + idea.butce + "tl<br>";
+	});
+}
+
+readIdea();
+
+function yorumClicked(e){
+	var yorumID = e.target.getAttribute("yorum-key");
+	const yorumRef = dbRef.child('yorumlar/' + yorumID);
+	const yorumDetay = document.getELementedById("yorum-detay");
+	yorumRef.on("value", snap => {
+		snap.forEach(childSnap => {
+			yorumDetay.innerHTML = "";
+			var $p = document.createElement("p");
+			$p.innerHTML = childSnap.key + " - " + childSnap.val();
+			yorumDetay.append($p);
+		})
+	});
+}
+
+const addYorumButton = document.getElementById("yorumbtn");
+if(addYorumButton)
+	addYorumButton.addEventListener("click", addYorumTikla, false);
+
+function addYorumTikla(){
+	const yorumRef = dbRef.child('yorums');
+	const addYorumInputs = document.getElementsByClassName("satir");
+	let newYorum = {};
+	for(let i = 0; i < addYorumInputs.length; i ++){
+		let key = addYorumInputs[i].getAttribute('data-key');
+		let value = addYorumInputs[i].value;
+		newYorum[key] = value;
+	}
+	yorumRef.push(newYorum);
+	alert("Yorumunuz eklenmiştir!");
+}
+
+const showYorumButton = document.getElementById("goster");
+if(showYorumButton)
+	showYorumButton.addEventListener("click", yorumlariGoster, false);
+	
+function yorumlariGoster(){
+	const yorumRef = dbRef.child('yorums');
+	const yorumlar = document.getElementById("yorum");
+	let yorum;
+	let text;
+	yorumRef.on("child_added", snap => {
+		yorum = snap.val();
+		text = goster_txt.value;
+		console.log(text);
+		console.log(yorum.fkr);
+		if(text == yorum.fkr)
+			yorumlar.innerHTML += "<b>" + yorum.isim + "</b> : " + yorum.yorum + "<br>";
+		else{
+			yorumlar.innerHTML = "Bu fikre ait henüz herhangi bir yorum yapılmamıştır.";
+		}
+ 	});
+}
+

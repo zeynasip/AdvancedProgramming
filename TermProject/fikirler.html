@@ -33,27 +33,38 @@ body{
     text-align: center;
     top: 10%;
 }
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #ddd}
+.show {display:block;}
+
 </style>
 
 </head>
-
-<script>
-let fikirler = new Array();
-fikirler.push({ad: "Zeynep", soyad: "Nasip", yas: 21, posta: "zeynasip@gmail.com", numara: 5398207862, fikir: "Girişimcilik Dükkanı", butce: 100});
-fikirler.push({ad: "Busenur", soyad: "Karaca", yas: 21, posta: "bkaraca@gmail.com", numara: 5332346578, fikir: "Kit'App", butce: 200});
-function createTable(array) {
-    for(let i = 0; i < array.length; i++){
-        document.write("<tr>");
-        document.write("<td align = 'center' width = '300'>" + array[i].ad + " " + array[i].soyad + "</td>");
-        document.write("<td align = 'center' width = '300'>" + array[i].fikir + "</td>");
-        document.write("<td align = 'center' width = '300'>" + array[i].butce + "</td>");
-        document.write("<td></td>");
-        document.write("<td input type = 'radio' name = '1'><font>1</font> <input type = 'radio' name = '2'><font>2</font> <input type = 'radio' name = '3'><font>3</font> <input type = 'radio' name = '4'><font>4</font> <input type = 'radio' name = '5'><font>5</font>" + "</td>");
-        document.write("</tr>");
-    }
-    document.write("</table>");
-}
-</script>
 
 <body>
 
@@ -61,28 +72,36 @@ function createTable(array) {
 <h class = "baslik">FİKİR RAFLARI</h>
 <pre></pre>
 <a href = "anasayfa.html" class = "sinif"><span style = "opacity: 0.5;">Anasayfaya Dön</a> &nbsp; &nbsp; &nbsp;
-<a href = "fikirolustur.html" class = "sinif"><span style = "opacity: 0.5;">Fikrini Dene!</a> &nbsp; &nbsp; &nbsp;
-<a href = "sponsorluk.html" class = "sinif"><span style = "opacity: 0.5;">Sponsor Ol..</a>
+<a href = "fikirolustur.html" class = "sinif"><span style = "opacity: 0.5;">Fikrini Dene!</a>
 </center>
 
 <br>
 <br> 
 
-<table border = 2  cellpadding = 6 bordercolor = "black" >
-<tr>
-<td align = "center" colspan = "5" width = "300">Raflardaki Fikirler</td>
-</tr>
-<tr>
-<td align = "center" width = "300">Fikir Sahibi</td>
-<td align = "center" width = "300">Fikir Konusu</td>
-<td align = "center" width = "50">Fikir Bütçesi</td>
-<td align = "center" width = "50">Oylama Ortalaması</td>
-<td align = "center" width = "100">Senin Oylaman</td>
-</tr>
-<script>
-createTable(fikirler);
-</script>
-</table>
+<div id = "fikirler" style="height:120px;width:350px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+</div>
+
+<hr/>
+
+<p><output id = "yorumYaz"></output></p>
+Fikir:&nbsp;<input type = text data-key = fkr styl = "width:99px" class = "satir"><br><br>
+Adınız:&nbsp;<input type = text data-key = isim style = "width:99px" class = "satir"><br><br>
+Yorumunuz:<br>
+<textarea type = text data-key = yorum class = "satir"></textarea><br><br>
+<input type = "button" id = yorumbtn value = "Gönder"></input>
+
+<hr />
+
+Fikir:&nbsp;<input type = text id = "goster_txt" styl = "width:99px" class = "satir"><br><br>
+<input type = "button" id = "goster" value = "Göster"></input>
+<p><output id = "yorum"></output></p>
+
+<ul id = "idea-list"></ul>
+<ul id = "yorum-list"></ul>
+<div id = "yorum-detay"></div>
+
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>

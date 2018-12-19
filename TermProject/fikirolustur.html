@@ -1,5 +1,4 @@
 <html lang = "en-US">
-<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
 
 <head>
 
@@ -62,33 +61,6 @@ body{
 
 </head>
 
-<script>
-let fikirler = new Array();
-fikirler.push({ad: "zeynep", soyad: "nasip", yas: 21, posta: "zeynasip@gmail.com", numara: 5398207862, fikir: "Girişimcilik Dükkanı", butce: 100});
-function gonder(){
-    let ad, soyad, yas, durum, posta, numara, fikir, butce;
-    let birfikir = new Object();
-    birfikir.ad = ad_txt.value;
-    birfikir.soyad = soyad_txt.value;
-    birfikir.yas = yas_txt.value;
-    birfikir.posta = posta_txt.value;
-    birfikir.numara = numara_txt.value;
-    birfikir.fikir = fikir_txt.value;
-    birfikir.butce = butce_txt.value;
-    fikirler.push(birfikir);
-    alert("Fikriniz Kaydedildi!");
-}
-function sifirla(){
-    ad_txt.value = "";
-    soyad_txt.value = "";
-    yas_txt.value = "";
-    posta_txt.value = "";
-    numara_txt.value = "";
-    fikir_txt.value = "";
-    butce_txt.value = "";
-}
-</script>
-
 <body>
 
 <center>
@@ -96,34 +68,36 @@ function sifirla(){
 <pre></pre>
 <a href = "anasayfa.html" class =" sinif"><span style = "opacity: 0.5;">Anasayfa</a> &nbsp; &nbsp; &nbsp;
 <a href = "fikirler.html" class = "sinif"><span style = "opacity: 0.5;">Fikir Rafları</a> &nbsp; &nbsp; &nbsp;
-<a href = "sponsorluk.html" class = "sinif"><span style = "opacity: 0.5;">Sponsor Ol..</a> &nbsp; &nbsp; &nbsp;
 <br>
 </center>
 
+<section id = "addtodatabase">
+<form >
 <fieldset>
 <legend>Kişisel Bilgiler</legend><br/>
-Adınız:&nbsp;<input type = text id = ad_txt style = "width:99px" class = "satir" tabindex = "1"><br><br>
-Soyadınız:&nbsp;<input type = text id = soyad_txt style = "width:99px" class = "satir" tabindex = "2"><br><br>
-Yaşınız:&nbsp;<input type = number id = yas_txt style = "width:99px" class = "satir" tabindex = "3"><br><br>
-Çalışma Durumunuz:&nbsp;<select name="meslek" tabindex = "4">
-<option value = "win">Öğrenci</option>
-<option value = "winnt">Çalışıyor</option>
-<option value = "linux">Çalışmıyor</option>
-</select>
+Adınız:&nbsp;<input type = text data-key = ad style = "width:99px" class = "satir" tabindex = "1"><br><br>
+Soyadınız:&nbsp;<input type = text data-key = soyad style = "width:99px" class = "satir" tabindex = "2"><br><br>
+Yaşınız:&nbsp;<input type = number data-key = yas style = "width:99px" class = "satir" tabindex = "3"><br><br>
 </fieldset><br>
 <fieldset>
 <legend>İletişim Bilgileri</legend><br/>
-E-postanız:&nbsp;<input type = text id = posta_txt style = "width:99px" class = "satir" tabindex = "5"><br><br>
-Numaranız:&nbsp;<input type = number id = numara_txt style = "width:99px" class = "satir" tabindex = "6"><br>
+E-postanız:&nbsp;<input type = text data-key = posta style = "width:99px" class = "satir" tabindex = "5"><br><br>
+Numaranız:&nbsp;<input type = number data-key = numara style = "width:99px" class = "satir" tabindex = "6"><br>
 </fieldset><br>
 <fieldset>
 Fikriniz:<br>
-<textarea type = text id = fikir_txt class = "satir" tabindex = "7"></textarea><br><br>
-Ortalama Bütçe:&nbsp;<input type = number id = butce_txt style = "width:99px" class = "satir" tabindex = "8"><br>
+<textarea type = text data-key = fikir class = "satir" tabindex = "7"></textarea><br><br>
+Ortalama Bütçe:&nbsp;<input type = number data-key = butce style = "width:99px" class = "satir" tabindex = "8"><br>
 </fieldset><br>
+<input type = "button" id = addbutton value = "Gönder"></input>
+</form>
+</section>
 
-<button id = gonder onclick = "gonder()">Gönder</button>
-<button id = sifirla onclick = "sifirla()">Sıfırla</button>
+<ul id = "idea-list"></ul>
+<div id = "idea-detay"></div>
+
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
