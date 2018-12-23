@@ -4,38 +4,91 @@
 
 <meta charset = "UTF-8">
 <meta name = "viewport" content = "width=device-width">
+<link rel = "icon" href = "idea.png"> 
 <title>Fikir Olustur</title>
 
 <style>
+	
 body{
-    border: 5px solid black;
-    padding: 30px;
-    background-color: #d7f3f3;
-    background-repeat: no-repeat;
-    background-size: 1500px 700px;
+    background: #C0C3AF;
 }
 .baslik{
-    color: #000000;
+	background-color: white;
+	padding: 15px;
+    color: #C0C3AF;
     font-family: "ITC Serif Gothicv", Lato;
-    font-size: 2em;
-    left: -2em;
+    font-size: 3em;
     letter-spacing: 0.2em;
-    right: -2em;
-    text-align: center;
-    top: 29%;
+    position: absolute;
+    top: 4%;
+	margin-left: 350px;
 }
-.sinif{
-    color: #000000;
-    font-family: "ITC Serif Gothic", Lato;
-    font-size: 1em;
-    left: -2em;
-    right: -2em;
-    text-align: center;
-    top: 10%;
+@mixin vertical-align($position){
+	position:$position;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+@mixin all-transition($time){
+	transition: all $time;
+	-webkit-transition: all $time;
+}
+body{
+	background-color: #C0C3AF;
+	margin: 0;
+	font-family: 'Muli', sans-serif;
+}
+.menu{
+	font-weight: 100;
+	background: #efefef;
+	width: 150px;
+	height: 100%;
+	padding-left: 50px;
+	position: fixed;
+	z-index: 100;
+	-webkit-box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+	box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
+	right: -130px;
+	@include all-transition(0.3s);
+	color: #222;
+}
+.menu:hover{
+	transform: translate3d(-130px, 0, 0);
+	animation-timing-function: 1s ease-in;
+}
+.menu:focus{
+	transform: translate3d(-130px, 0, 0);
+	animation-timing-function: 1s ease-in;
+}
+.title{
+	top:50%;
+	@include horizantal-align(absolute);
+	transform: rotate(270deg);
+	left: 10px;
+	font-weight: 800;
+	font-size: 15px;
+}
+.nav{
+	@include vertical-align(absolute);
+    font-weight: 100;
+}
+.nav li{
+    padding-bottom: 30px;
+	list-style-type: none;
+}
+.nav a{
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	include all-transition(0.3s);
+}
+.nav a:hover{
+	color: #aaa;
 }
 .satir{
-    padding-left: 5em
-    margin-left: 20em
+    padding-left: 15em
+    margin-left: 30em
 }
 .alert {
     padding: 20px;
@@ -43,53 +96,43 @@ body{
     color: white;
 }
 
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.closebtn:hover {
-    color: black;
-}
 </style>
 
 </head>
 
 <body>
 
-<center>
-<h class = "baslik">FİKRİNİ DENE</h>
-<pre></pre>
-<a href = "anasayfa.html" class =" sinif"><span style = "opacity: 0.5;">Anasayfa</a> &nbsp; &nbsp; &nbsp;
-<a href = "fikirler.html" class = "sinif"><span style = "opacity: 0.5;">Fikir Rafları</a> &nbsp; &nbsp; &nbsp;
-<br>
-</center>
+<div class = "baslik">FİKRİNİ DENE</div>
 
+<div class = "menu"><br><br><br><br><br><br><br><br><br><br><br>
+	<ul class="nav">
+		<li><a href="anasayfa.html">Anasayfa</a></li>
+		<li><a href="hakkimizda.html">Hakkımızda</a></li>
+		<li><a href="fikirler.html">Fikirlere Bak</a></li>
+		<li><a href="kaynaklar.html">Kaynaklar</a></li>
+	</ul>
+</div>
+
+<br><br><br><br><br><br><br><br>
 <section id = "addtodatabase">
-<form >
+<form>
 <fieldset>
 <legend>Kişisel Bilgiler</legend><br/>
-Adınız:&nbsp;<input type = text data-key = ad style = "width:99px" class = "satir" tabindex = "1"><br><br>
-Soyadınız:&nbsp;<input type = text data-key = soyad style = "width:99px" class = "satir" tabindex = "2"><br><br>
-Yaşınız:&nbsp;<input type = number data-key = yas style = "width:99px" class = "satir" tabindex = "3"><br><br>
+Adınız:<br><input type = text data-key = ad style = "width:99px" class = "satir" tabindex = "1"><br><br>
+Soyadınız:<br><input type = text data-key = soyad style = "width:99px" class = "satir" tabindex = "2"><br><br>
+Yaşınız:<br><input type = number data-key = yas style = "width:99px" class = "satir" tabindex = "3"><br><br>
 </fieldset><br>
-<fieldset>
+<fieldset >
 <legend>İletişim Bilgileri</legend><br/>
-E-postanız:&nbsp;<input type = text data-key = posta style = "width:99px" class = "satir" tabindex = "5"><br><br>
-Numaranız:&nbsp;<input type = number data-key = numara style = "width:99px" class = "satir" tabindex = "6"><br>
+E-postanız:<br><input type = text data-key = posta style = "width:99px" class = "satir" tabindex = "5"><br><br>
+Numaranız:<br><input type = number data-key = numara style = "width:99px" class = "satir" tabindex = "6"><br>
 </fieldset><br>
 <fieldset>
 Fikriniz:<br>
 <textarea type = text data-key = fikir class = "satir" tabindex = "7"></textarea><br><br>
-Ortalama Bütçe:&nbsp;<input type = number data-key = butce style = "width:99px" class = "satir" tabindex = "8"><br>
+Ortalama Bütçe:<br><input type = number data-key = butce style = "width:99px" class = "satir" tabindex = "8"><br>
 </fieldset><br>
-<input type = "button" id = addbutton value = "Gönder"></input>
+<input type = "button" id = "addbutton" value = "Gönder"></input>
 </form>
 </section>
 

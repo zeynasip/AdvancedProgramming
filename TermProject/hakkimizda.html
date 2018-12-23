@@ -1,31 +1,27 @@
-<html>
-	
-<head>
-	
-<link rel = "icon" href = "idea.png"> 
-<link rel="manifest" href="manifest.json"> 
+<html lang = "en-US">
 
-<script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('https://zeynasip.github.io/AdvancedProgramming/sw.js')
-        .then((reg) => { console.log('SW starts', reg.active) })
-        .catch(console.log)
-    }
-</script>
+<head>
+
+<meta charset = "UTF-8">
+<meta name = "viewport" content = "width=device-width">
+<link rel = "icon" href = "idea.png"> 
+<title>Hakkımızda</title>
 
 <style>
 	
+body{
+    background: #C0C3AF;
+}
 .baslik{
 	background-color: white;
 	padding: 15px;
     color: #C0C3AF;
     font-family: "ITC Serif Gothicv", Lato;
-    font-size: 10em;
+    font-size: 3em;
     letter-spacing: 0.2em;
     position: absolute;
-    top: 35%;
-	margin-left: 180px;
+    top: 4%;
+	margin-left: 440px;
 }
 @mixin vertical-align($position){
 	position:$position;
@@ -37,11 +33,6 @@
 @mixin all-transition($time){
 	transition: all $time;
 	-webkit-transition: all $time;
-}
-body{
-	background-color: #C0C3AF;
-	margin: 0;
-	font-family: 'Muli', sans-serif;
 }
 .menu{
 	font-weight: 100;
@@ -90,24 +81,41 @@ body{
 .nav a:hover{
 	color: #aaa;
 }
+.intro{
+	position: absolute;
+	top:35%;
+	font-family: "ITC Serif Gothicv", Lato;
+	margin: 0 auto;left:0;right:0;
+	font-size: 25px;
+	text-align: center;
+    font-style: italic;
+}
 
 </style>
 
 </head>
 
 <body>
-
+	
 <div class = "menu"><br><br><br><br><br><br><br><br><br><br><br>
-		<ul class = "nav">
-			<li><a href = "hakkimizda.html">Hakkımızda</a></li>
-			<li><a href = "fikirler.html">Fikirlere Bak</a></li>
-			<li><a href = "fikirolustur.html">Fikir Dene</a></li>
-			<li><a href = "kaynaklar.html">Kaynaklar</a></li>
-		</ul>
+	<ul class = "nav">
+		<li><a href = "anasayfa.html">Anasayfa</a></li>
+		<li><a href = "fikirler.html">Fikirlere Bak</a></li>
+		<li><a href = "fikirolustur.html">Fikir Dene</a></li>
+		<li><a href = "kaynaklar.html">Kaynaklar</a></li>
+	</ul>
 </div>
 
-<div class = "baslik">DÜKKAN</div>
-	
-</body>
+<div class = "baslik">HAKKIMIZDA</div>
 
+<div class = "intro">
+"Her şey bir fikirle başlar. (Earl Nightingale)" <br> 
+Nesnelerin İnterneti çağında bulunduğumuz kuşkusuz  <br>
+kesin bir gerçektir. Siz de fikirlerinizi, sitemiz aracılığı <br>
+ile işleme koymadan önce halka sunabilirsiniz. Fikirlerinizi deneyebilir, <br>
+başka fikirlere yorumlarda bulunabilirsiniz. <br>
+<br> D Ü K K A N : İ  D E A L A N D <br>
+</div>
+
+</body>
 </html>

@@ -5,7 +5,7 @@
 <meta charset = "UTF-8">
 <meta name = "viewport" content = "width=device-width">
 <link rel = "icon" href = "idea.png"> 
-<title>Fikirler</title>
+<title>Kaynaklar</title>
 
 <style>
 	
@@ -21,7 +21,7 @@ body{
     letter-spacing: 0.2em;
     position: absolute;
     top: 4%;
-	margin-left: 350px;
+	margin-left: 450px;
 }
 @mixin vertical-align($position){
 	position:$position;
@@ -81,85 +81,57 @@ body{
 .nav a:hover{
 	color: #aaa;
 }
-table, th, td{
-	border-collapse: collapse;
-	padding: 6px;
-	cursor: pointer;
+.intro1{
+	position: absolute;
+	top:35%;
+	font-family: "ITC Serif Gothicv", Lato;
+	margin: 0 auto;left:0;right:0;
+	font-size: 55px;
+	text-align: center;
+    font-style: italic;
 }
-tr:hover{
-	background-color: grey;
-	max-width: 1000px;
+.intro2{
+	position: absolute;
+	top:45%;
+	font-family: "ITC Serif Gothicv", Lato;
+	margin: 0 auto;left:0;right:0;
+	font-size: 55px;
+	text-align: center;
+    font-style: italic;
 }
-.split{
-	height: 100%;
-	width: 50%;
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	overflow-x: hidden;
-	padding-top: 20px;
-}
-.left{
-	top: 15%;
-	font-size: 1em;
-    left: 2em;
-    right: 2em;
-}
-.right{
-	top: 15%;
-	font-size: 1em;
-    left: 35em;
-    right: 35em;
+.intro3{
+	position: absolute;
+	top:55%;
+	font-family: "ITC Serif Gothicv", Lato;
+	margin: 0 auto;left:0;right:0;
+	font-size: 55px;
+	text-align: center;
+    font-style: italic;
 }
 
 </style>
 
 </head>
 
+<script>
+
+</script>
+
 <body>
 	
-<div class = "baslik">FİKİR RAFLARI</div>
-
-<div class = "split left">
-<h3>Fikirler</h3>
-<table id = "tablo" border = 1 bordercolor = "black" >
-	<tr>
-		<td width = "80"><b>Ad Soyad</b></td>
-		<td width = "80"><b>Yaş</b></td>
-		<td width = "80" id = "fkrrow"><b>Fikir</b></td>
-		<td width = "80"><b>Bütçe</b></td>
-	</tr>
-</table>
-
-<h3>Yorum Yazma</h3>
-<p><output id = "yorumYaz"></output></p>
-Fikir:<br><input type = "text" data-key = fkr style = "width:99px" class = "satir"><br><br>
-Adınız:<br><input type = "text" data-key = isim style = "width:99px" class = "satir"><br><br>
-Yorumunuz:<br>
-<textarea type = "text" data-key = yorum class = "satir"></textarea><br><br>
-<input type = "button" id = "yorumbtn" value = "Gönder"></input>
-</div>
-
-<div class = "split right">
-<h3>Yorumları Göster</h3>
-<p><output id = "yorum"></output></p>
-</div>
-
 <div class = "menu"><br><br><br><br><br><br><br><br><br><br><br>
 	<ul class="nav">
 		<li><a href="anasayfa.html">Anasayfa</a></li>
 		<li><a href="hakkimizda.html">Hakkımızda</a></li>
+		<li><a href="fikirler.html">Fikirlere Bak</a></li>
 		<li><a href="fikirolustur.html">Fikir Dene</a></li>
-		<li><a href="kaynaklar.html">Kaynaklar</a></li>
 	</ul>
 </div>
 
-<ul id = "idea-list"></ul>
-<ul id = "yorum-list"></ul>
-<div id = "yorum-detay"></div>
-
-<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-<script src="app.js"></script>
+<div class = "baslik">KAYNAKLAR</div>
+<a class = "intro1" href="https://codepen.io/mkurapov/pen/WwVvZy/?editors=1100">- Code Pen</a><br>
+<a class = "intro2" href="https://firebase.google.com/docs/web/setup?authuser=0">- Firebase</a><br>
+<a class = "intro3" href="https://www.w3schools.com/">- w3schools</a>
 
 </body>
 </html>

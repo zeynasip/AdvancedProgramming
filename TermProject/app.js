@@ -26,7 +26,7 @@ function ideaClicked(e){
 	});
 }
 
-const addIdeaButton = document.getElementById("addtodatabase");
+const addIdeaButton = document.getElementById("addbutton");
 if(addIdeaButton)
 	addIdeaButton.addEventListener("click", addButtonTikla, false);
 
@@ -37,19 +37,33 @@ function addButtonTikla(){
 	for(let i = 0; i < addIdeaInputs.length; i ++){
 		let key = addIdeaInputs[i].getAttribute('data-key');
 		let value = addIdeaInputs[i].value;
-		newIdea[key] = value;
+		if(value != "")
+			newIdea[key] = value;
 	}
-	ideasRef.push(newIdea);
-	alert("Bilgileriniz sisteme eklenmiştir!");
+	//for(let i = 0; i < 7; i++)
+		//console.log(newIdea[i]);
+	//if(newIdea[0].value == null || newIdea[1].value == null || newIdea[2].value == null || newIdea[3].value == null || newIdea[4].value == null || newIdea[5].value == null || newIdea[6].value == null){
+		//alert("Boş alanları doldurunuz!");
+	//}
+	//else
+		ideasRef.push(newIdea);
+		alert("Bilgileriniz kaydedildi!");
+	//
 }
 
 function readIdea(){
-	const fikirler = document.getElementById("fikirler");
-	const fikirListe = document.getElementById("idea-list"); 
+	const fikirler = document.getElementById("tablo");
 	ideasRef.on("child_added", snap => {
 		let idea = snap.val();
-		console.log(idea.fikir);
-		fikirler.innerHTML += idea.ad + " " + idea.soyad + " -> " + idea.yas  + " -> " + idea.fikir + " -> " + idea.butce + "tl<br>";
+		newRow = fikirler.insertRow();
+		cellAd = newRow.insertCell();
+        cellAd.innerHTML = idea.ad + " " + idea.soyad;
+        cellYas = newRow.insertCell();
+        cellYas.innerHTML = idea.yas;
+        cellFikir = newRow.insertCell();
+        cellFikir.innerHTML = idea.fikir;
+        cellButce = newRow.insertCell();
+        cellButce.innerHTML = idea.butce;
 	});
 }
 
@@ -86,25 +100,23 @@ function addYorumTikla(){
 	alert("Yorumunuz eklenmiştir!");
 }
 
-const showYorumButton = document.getElementById("goster");
-if(showYorumButton)
-	showYorumButton.addEventListener("click", yorumlariGoster, false);
-	
+document.querySelectorAll('#tablo tr')
+	.forEach(e => e.addEventListener("click", yorumlariGoster()));
+
 function yorumlariGoster(){
 	const yorumRef = dbRef.child('yorums');
 	const yorumlar = document.getElementById("yorum");
+	yorumlar.innerHTML = "";
 	let yorum;
-	let text;
 	yorumRef.on("child_added", snap => {
 		yorum = snap.val();
-		text = goster_txt.value;
-		console.log(text);
-		console.log(yorum.fkr);
-		if(text == yorum.fkr)
-			yorumlar.innerHTML += "<b>" + yorum.isim + "</b> : " + yorum.yorum + "<br>";
-		else{
-			yorumlar.innerHTML = "Bu fikre ait henüz herhangi bir yorum yapılmamıştır.";
-		}
+		//if(yorumlar.fkr == cell[2].innerText)
+			yorumlar.innerHTML += "<b>" + yorum.isim + "	'" 
+								  + yorum.fkr + "'	fikri için : </b><br>"
+								  + yorum.yorum + "<br><hr>";
+		//yorumlar.innerHTML = "Bu fikre ait henüz herhangi bir yorum yapılmamıştır.";
  	});
 }
+
+
 
