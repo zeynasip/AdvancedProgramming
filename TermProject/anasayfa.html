@@ -2,8 +2,8 @@
 	
 <head>
 	
-<link rel = "icon" href = "idea.png"> 
-<link rel="manifest" href="manifest.json"> 
+<link rel = "icon" href = "https://zeynasip.github.io/AdvancedProgramming/TermProject/idea.png"> 
+<link rel="manifest" href="https://zeynasip.github.io/AdvancedProgramming/TermProject/manifest.json"> 
 
 <script>
     if ('serviceWorker' in navigator) {
@@ -15,7 +15,11 @@
 </script>
 
 <style>
-	
+#main{
+    margin-left: 250px;
+    min-width: 400px;
+    min-height: 800px;
+}	
 .baslik{
 	background-color: white;
 	padding: 15px;
@@ -48,21 +52,20 @@ body{
 	background: #efefef;
 	width: 150px;
 	height: 100%;
-	padding-left: 50px;
 	position: fixed;
 	z-index: 100;
 	-webkit-box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
 	box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
-	right: -130px;
+	left: -130px;
 	@include all-transition(0.3s);
 	color: #222;
 }
 .menu:hover{
-	transform: translate3d(-130px, 0, 0);
+	transform: translate3d(130px, 0, 0);
 	animation-timing-function: 1s ease-in;
 }
 .menu:focus{
-	transform: translate3d(-130px, 0, 0);
+	transform: translate3d(130px, 0, 0);
 	animation-timing-function: 1s ease-in;
 }
 .title{
@@ -90,7 +93,6 @@ body{
 .nav a:hover{
 	color: #aaa;
 }
-
 </style>
 
 </head>
@@ -99,15 +101,17 @@ body{
 
 <div class = "menu"><br><br><br><br><br><br><br><br><br><br><br>
 		<ul class = "nav">
-			<li><a href = "hakkimizda.html">Hakkımızda</a></li>
-			<li><a href = "fikirler.html">Fikirlere Bak</a></li>
-			<li><a href = "fikirolustur.html">Fikir Dene</a></li>
-			<li><a href = "kaynaklar.html">Kaynaklar</a></li>
+			<li><a href = "https://zeynasip.github.io/AdvancedProgramming/TermProject/hakkimizda.html">Hakkımızda</a></li>
+			<li><a href = "https://zeynasip.github.io/AdvancedProgramming/TermProject/fikirler.html">Fikirlere Bak</a></li>
+			<li><a href = "https://zeynasip.github.io/AdvancedProgramming/TermProject/fikirolustur.html">Fikir Dene</a></li>
+			<li><a href = "https://zeynasip.github.io/AdvancedProgramming/TermProject/kaynaklar.html">Kaynaklar</a></li>
 		</ul>
 </div>
 
+<center>
 <div class = "baslik">DÜKKAN</div>
-	
+</center>	
+
 </body>
 
 </html>

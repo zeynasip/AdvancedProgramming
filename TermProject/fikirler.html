@@ -4,11 +4,15 @@
 
 <meta charset = "UTF-8">
 <meta name = "viewport" content = "width=device-width">
-<link rel = "icon" href = "idea.png"> 
+<link rel = "icon" href = "https://zeynasip.github.io/AdvancedProgramming/TermProject/idea.png"> 
 <title>Fikirler</title>
 
 <style>
-	
+#main{
+    margin-left: 250px;
+    min-width: 400px;
+    min-height: 800px;
+}	
 body{
     background: #C0C3AF;
 }
@@ -17,11 +21,11 @@ body{
 	padding: 15px;
     color: #C0C3AF;
     font-family: "ITC Serif Gothicv", Lato;
-    font-size: 3em;
+    font-size: 4em;
     letter-spacing: 0.2em;
     position: absolute;
     top: 4%;
-	margin-left: 350px;
+	margin-left: 50px;
 }
 @mixin vertical-align($position){
 	position:$position;
@@ -39,21 +43,20 @@ body{
 	background: #efefef;
 	width: 150px;
 	height: 100%;
-	padding-left: 50px;
 	position: fixed;
 	z-index: 100;
 	-webkit-box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
 	box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
-	right: -130px;
+	left: -130px;
 	@include all-transition(0.3s);
 	color: #222;
 }
 .menu:hover{
-	transform: translate3d(-130px, 0, 0);
+	transform: translate3d(130px, 0, 0);
 	animation-timing-function: 1s ease-in;
 }
 .menu:focus{
-	transform: translate3d(-130px, 0, 0);
+	transform: translate3d(130px, 0, 0);
 	animation-timing-function: 1s ease-in;
 }
 .title{
@@ -111,7 +114,6 @@ tr:hover{
     left: 35em;
     right: 35em;
 }
-
 </style>
 
 </head>
@@ -121,10 +123,11 @@ tr:hover{
 <div class = "baslik">FİKİR RAFLARI</div>
 
 <div class = "split left">
+<br>
 <h3>Fikirler</h3>
 <table id = "tablo" border = 1 bordercolor = "black" >
 	<tr>
-		<td width = "40px"><b>Ad Soyad</b></td>
+		<td width = "80px"><b>Ad Soyad</b></td>
 		<td width = "80px"><b>Yaş</b></td>
 		<td width = "80px" id = "fkrrow"><b>Fikir</b></td>
 		<td width = "80px"><b>Bütçe</b></td>
@@ -141,16 +144,17 @@ Yorumunuz:<br>
 </div>
 
 <div class = "split right">
+<br>
 <h3>Yorumları Göster</h3>
 <p><output id = "yorum"></output></p>
 </div>
 
 <div class = "menu"><br><br><br><br><br><br><br><br><br><br><br>
 	<ul class="nav">
-		<li><a href="anasayfa.html">Anasayfa</a></li>
-		<li><a href="hakkimizda.html">Hakkımızda</a></li>
-		<li><a href="fikirolustur.html">Fikir Dene</a></li>
-		<li><a href="kaynaklar.html">Kaynaklar</a></li>
+		<li><a href="https://zeynasip.github.io/AdvancedProgramming/TermProject/anasayfa.html">Anasayfa</a></li>
+		<li><a href="https://zeynasip.github.io/AdvancedProgramming/TermProject/hakkimizda.html">Hakkımızda</a></li>
+		<li><a href="https://zeynasip.github.io/AdvancedProgramming/TermProject/fikirolustur.html">Fikir Dene</a></li>
+		<li><a href="https://zeynasip.github.io/AdvancedProgramming/TermProject/kaynaklar.html">Kaynaklar</a></li>
 	</ul>
 </div>
 
